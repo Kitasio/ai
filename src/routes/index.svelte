@@ -1,4 +1,5 @@
 <script>
+	import { fade } from 'svelte/transition';
 	let prompt;
 	let max_tokens;
 	let data;
@@ -31,13 +32,18 @@
 				type="number"
 				class="rounded-xl text-emerald-100 p-2 bg-emerald-500 border-2 border-emerald-50 w-32"
 			/>
-			<div on:click={send} class="border-2 cursor-pointer border-emerald-50 p-2 rounded-xl text-emerald-100">click</div>
+			<div
+				on:click={send}
+				class="border-2 uppercase hover:scale-105 transition duration-200 cursor-pointer border-emerald-50 p-2 rounded-xl text-emerald-100"
+			>
+				click
+			</div>
 		</div>
 	</div>
 
 	{#if data}
-    <div class="mt-5 text-emerald-100 mx-5 md:mx-auto max-w-6xl">
-      {@html data}
-    </div>
+		<div in:fade class="mt-5 text-emerald-100 mx-5 md:mx-auto max-w-6xl">
+			{@html data}
+		</div>
 	{/if}
 </div>
