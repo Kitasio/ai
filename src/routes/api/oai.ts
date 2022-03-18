@@ -10,6 +10,7 @@ export async function post({ request }) {
     body: JSON.stringify({
       prompt: input.prompt,
       max_tokens: input.max_tokens,
+      temperature: 1,
     })
   })
 
