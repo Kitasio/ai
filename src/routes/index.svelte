@@ -1,7 +1,7 @@
 <script>
 	import { fade } from 'svelte/transition';
 	let prompt;
-	let max_tokens = 100;
+	let max_tokens = 200;
 	let data;
 	let loading = false;
 
